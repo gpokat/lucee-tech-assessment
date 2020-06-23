@@ -95,7 +95,7 @@ CID=row.cid;
 }
 
 sql_pattern="INSERT INTO exams_associated(exid,cid,taid)
-SELECT * FROM (SELECT :examID, :CID, :testcenterID) AS tmp
+SELECT * FROM (SELECT :examID AS exid, :CID AS cid, :testcenterID AS taid) AS tmp
 WHERE NOT EXISTS (
 SELECT *
  FROM exams_associated ea
